@@ -1,16 +1,16 @@
-import { h, render } from 'preact';
+import { h, render, Fragment } from 'preact';
 import { useState, useCallback } from 'preact/hooks'
 
-function App() {
+function Home() {
   const [counter, setCounter] = useState(0);
   const onClick = useCallback(() => setCounter(counter => counter + 1), []);
-  return <div>
+  return <Fragment>
     <h1>Hello Preact</h1>
     <div>
       <button onClick={onClick}>{counter}</button>
     </div>
-  </div>
+  </Fragment>
 }
 
 const root = document.querySelector(".root") as HTMLDivElement;
-render(<App />, root);
+render(<Home />, root);
